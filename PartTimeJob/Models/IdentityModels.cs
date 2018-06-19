@@ -29,5 +29,6 @@ namespace PartTimeJob.Models
         {
             return new ApplicationDbContext();
         }
+        public DbSet<WithOutQualificationJob> WithOutQualificationJobs { get; set; }
     }
 }

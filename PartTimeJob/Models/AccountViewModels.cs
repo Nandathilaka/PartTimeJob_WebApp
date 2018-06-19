@@ -65,6 +65,16 @@ namespace PartTimeJob.Models
     public class RegisterViewModel
     {
         [Required]
+        //[EmailAddress]
+        [Display(Name = "Your Name")]
+        public string YourName { get; set; }
+
+        [Required]
+        //[EmailAddress]
+        [Display(Name = "Company Name")]
+        public string CompanyName { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
