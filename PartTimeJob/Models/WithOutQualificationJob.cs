@@ -11,40 +11,45 @@ namespace PartTimeJob.Models
     {
         public int Id { get; set; }
 
-        [Required]
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [Required(ErrorMessage ="Please Enter Job Name")]
+        [DisplayName("Job Name")]
+        //[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         [StringLength(50, ErrorMessage = "Job Name cannot be longer than 50 characters.")]
         public string JobName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Job Catergory")]
         [StringLength(50, ErrorMessage = "Job Cateegory cannot be longer than 50 characters.")]
-        [MaxLength(255)]
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [DisplayName("Job Category")]
+        //[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         public string JobCategory { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Job Description")]
+        [DisplayName("Job Description")]
         public string JobDescription { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Number of Employee do You Want")]
+        //[DataType(DataType.Custom)]
+        [DisplayName("Number Of Employee")]
         public int NumOfEmployee { get; set; }
 
-        [Required]
-        [DataType(DataType.Currency)]
+        [Required(ErrorMessage = "Please Enter Payment for This Job")]
+        //[DataType(DataType.Currency)]
         public decimal Payment { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Date Format yyyy-MM-dd")]
         [DisplayName("Date")]
-        [DataType(DataType.DateTime, ErrorMessage = "Date non valid.")]
+        //[DataType(DataType.DateTime, ErrorMessage = "Date non valid.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
 
-        [Required]
-        [DataType(DataType.PhoneNumber)]
-        [StringLength(10, ErrorMessage = "Phone Number cannot be longer than 10 characters.")]
-        [RegularExpression(@"\d{1,10}", ErrorMessage = "Phone Number cannot be longer than 10 characters.")]
+        [Required(ErrorMessage = "Please Enter Phone Number")]
+        [DisplayName("Phone Number")]
+        //[DataType(DataType.PhoneNumber)]
+        //[StringLength(10, ErrorMessage = "Phone Number cannot be longer than 10 characters.")]
+        //[RegularExpression(@"\d{1,10}", ErrorMessage = "Phone Number cannot be longer than 10 characters.")]
         public string PhoneNumber { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Location")]
         public string Location { get; set; }
 
         public virtual ApplicationUser User { get; set; }

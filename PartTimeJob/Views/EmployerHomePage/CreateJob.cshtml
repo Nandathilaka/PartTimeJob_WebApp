@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "CreateJob";
+}
+
+<h2>Create Job</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Without Qualification Job Create</h2>
+        <p>
+            Create New Job
+        </p>
+        <p>@Html.ActionLink("Create Job", "Index", "WithOutQualificationJob", null, new { @class = "btn btn-primary btn-lg" })</p>
+
+    </div>
+    <div class="col-md-4">
+        <h2>With Qualification Job Create</h2>
+        <p>Create New Job</p>
+        <p>@Html.ActionLink("Create Job", "Create", "WithQualificationJob", null, new { @class = "btn btn-primary btn-lg" })</p>
+    </div>
+</div>
+

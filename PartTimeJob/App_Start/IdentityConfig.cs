@@ -11,6 +11,12 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using PartTimeJob.Models;
+using SendGrid.Helpers.Mail;
+using SendGrid;
+using System.Net;
+using System.Configuration;
+using System.Diagnostics;
+using System.Net.Mail;
 
 namespace PartTimeJob
 {
@@ -18,8 +24,8 @@ namespace PartTimeJob
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+        // Plug in your email service here to send an email.
+          return Task.FromResult(0);
         }
     }
 

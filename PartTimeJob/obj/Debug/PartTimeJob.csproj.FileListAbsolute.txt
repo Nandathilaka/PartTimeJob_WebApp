@@ -81,3 +81,10 @@ D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob\PartTimeJob\bi
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob\PartTimeJob\bin\roslyn\System.IO.FileSystem.Primitives.dll
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob\PartTimeJob\bin\roslyn\vbc.exe.config
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob\PartTimeJob\bin\roslyn\vbc.rsp
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob\PartTimeJob\bin\SendGrid.dll
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob\PartTimeJob\bin\SendGrid.pdb
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob\PartTimeJob\bin\SendGrid.xml
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob\PartTimeJob\obj\Debug\PartTimeJob.Migrations.InitialCreate.resources
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob\PartTimeJob\obj\Debug\PartTimeJob.csproj.GenerateResource.Cache
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob\PartTimeJob\obj\Debug\PartTimeJob.Migrations.WithOutQualificafionValidate.resources
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob\PartTimeJob\obj\Debug\PartTimeJob.Migrations.UpdateTable.resources

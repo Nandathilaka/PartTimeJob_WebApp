@@ -54,15 +54,15 @@ namespace PartTimeJob
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1114481348692740",
+               appSecret: "1f834f6782cda646c9dbcab54d2f2f44");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "206989437583-3vq2krnmt3uu03um5ucql62ftb7t1crm.apps.googleusercontent.com",
+                ClientSecret = "Sl0d6pNGKqubARyOLMMzMVtQ"
+            });
         }
     }
 }
