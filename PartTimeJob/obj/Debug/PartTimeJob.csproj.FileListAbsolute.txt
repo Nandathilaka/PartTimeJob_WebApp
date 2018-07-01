@@ -179,3 +179,10 @@ D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTim
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.dll
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.pdb
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.Migrations.AddUserType.resources
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\Microsoft.IdentityModel.Logging.dll
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\Microsoft.IdentityModel.Tokens.dll
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\Twilio.dll
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\Microsoft.IdentityModel.Tokens.xml
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\Twilio.xml

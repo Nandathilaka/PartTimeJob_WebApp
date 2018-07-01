@@ -17,6 +17,7 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Net.Mail;
 using System.Net.Mime;
+using Twilio.Clients;
 
 namespace PartTimeJob
 {
@@ -64,6 +65,14 @@ namespace PartTimeJob
     {
         public Task SendAsync(IdentityMessage message)
         {
+            //string AccountSid = "ACad2c83c68dabc7489ea9fce847ba4916";
+            //string AuthToken = "b51a8a7a75a2fef3617f10e41ce93509";
+            //string twilioPhoneNumber = "+1 517-210-1865 ";
+
+            //var twilio = new TwilioRestClient(AccountSid, AuthToken);
+
+            //twilio.SendSmsMessage(twilioPhoneNumber, message.Destination, message.Body);
+
             // Plug in your SMS service here to send a text message.
             return Task.FromResult(0);
         }
