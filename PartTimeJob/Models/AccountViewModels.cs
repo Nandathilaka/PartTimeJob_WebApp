@@ -61,18 +61,15 @@ namespace PartTimeJob.Models
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
     }
+    public enum UserType {
+        Employee,Emploer
+    }
 
     public class RegisterViewModel
     {
         [Required]
-        //[EmailAddress]
-        [Display(Name = "Your Name")]
-        public string YourName { get; set; }
-
-        [Required]
-        //[EmailAddress]
-        [Display(Name = "Company Name")]
-        public string CompanyName { get; set; }
+        [Display(Name = "User Type")]
+        public UserType? UserType { get; set; }
 
         [Required]
         [EmailAddress]
