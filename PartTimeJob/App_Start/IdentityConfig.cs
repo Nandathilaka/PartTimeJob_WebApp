@@ -18,6 +18,9 @@ using System.Diagnostics;
 using System.Net.Mail;
 using System.Net.Mime;
 using Twilio.Clients;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Types;
 
 namespace PartTimeJob
 {
@@ -74,7 +77,26 @@ namespace PartTimeJob
             //twilio.SendSmsMessage(twilioPhoneNumber, message.Destination, message.Body);
 
             // Plug in your SMS service here to send a text message.
-            return Task.FromResult(0);
+            //return Task.FromResult(0);
+
+            // Twilio Begin
+            var accountSid = ConfigurationManager.AppSettings["SMSAccountIdentification"];
+            var authToken = ConfigurationManager.AppSettings["SMSAccountPassword"];
+            var fromNumber = ConfigurationManager.AppSettings["SMSAccountFrom"];
+
+            TwilioClient.Init(accountSid, authToken);
+
+            MessageResource result = MessageResource.Create(
+            new PhoneNumber(message.Destination),
+            from: new PhoneNumber(fromNumber),
+            body: message.Body
+            );
+
+            ////Status is one of Queued, Sending, Sent, Failed or null if the number is not valid
+            Trace.TraceInformation(result.Status.ToString());
+            ////Twilio doesn't currently have an async API, so return success.
+            return Task.FromResult(0);    
+            // Twilio End
         }
     }
 

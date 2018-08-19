@@ -172,13 +172,8 @@ D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTim
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\Microsoft.AspNet.Identity.Owin.xml
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.csprojResolveAssemblyReference.cache
-D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.Migrations.InitialCreate.resources
-D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.Migrations.WithOutQualificafionValidate.resources
-D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.Migrations.UpdateTable.resources
-D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.csproj.GenerateResource.Cache
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.dll
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.pdb
-D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.Migrations.AddUserType.resources
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\Microsoft.IdentityModel.Logging.dll
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\Microsoft.IdentityModel.Tokens.dll
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\System.IdentityModel.Tokens.Jwt.dll
@@ -186,3 +181,7 @@ D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTim
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\Microsoft.IdentityModel.Tokens.xml
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\System.IdentityModel.Tokens.Jwt.xml
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\bin\Twilio.xml
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.Migrations.InitialCreate.resources
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.csproj.GenerateResource.Cache
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.Migrations.UpdateDatabase.resources
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.Migrations.UpdateJobCategory.resources

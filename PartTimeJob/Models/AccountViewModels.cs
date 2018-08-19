@@ -62,7 +62,7 @@ namespace PartTimeJob.Models
         public bool RememberMe { get; set; }
     }
     public enum UserType {
-        Employee,Emploer
+        Employee,Employer
     }
 
     public class RegisterViewModel

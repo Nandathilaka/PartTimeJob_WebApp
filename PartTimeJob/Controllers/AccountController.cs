@@ -12,9 +12,12 @@ using PartTimeJob.Models;
 
 namespace PartTimeJob.Controllers
 {
+    
     [Authorize]
     public class AccountController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -80,8 +83,42 @@ namespace PartTimeJob.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+
+                    //var Usertype = db.Users.Where(c => c.UserName == model.Email)
+                    //.Select(x => x.UserType);
+
+                    //var GenreQry = from m in db.Users where m.UserName == model.Email select m.UserType;
+                    //var Usertype = GenreQry.First();
+
+                    /*
+                    var query = from st in db.Users
+                                where st.Email == model.Email
+                                select st.UserType;
+                    var Usertypes = query.FirstOrDefault();
+                    
+                    var user = UserManager.Users.Where(u => u.UserName == model.Email).SingleOrDefault();
+                    var value = (int)user.UserType;
+                    */
+
+                    var user = db.Users
+                    .Where(b => b.UserName == model.Email)
+                    .FirstOrDefault();
+                    var value = (int)user.UserType;
+
+                    if (value==0)
+                    {
+                        return RedirectToAction("Home", "EmployeeHomePage");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Home", "EmployerHomePage");
+                    }
+                    
+                    
                     //return RedirectToLocal(returnUrl);
-                    return RedirectToAction("Home","EmployerHomePage");
+                    //return RedirectToAction("Home", "EmployerHomePage");
+                    //return RedirectToAction("Home", "EmployeeHomePage");
+
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -165,7 +202,18 @@ namespace PartTimeJob.Controllers
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Home", "EmployerHomePage");
+                    var value = (int)model.UserType;
+
+                    if (value==1)
+                    {
+                        return RedirectToAction("Create", "Employer");
+                    }
+                    else {
+                        return RedirectToAction("Create", "Employee");
+                    }
+                    
+                    
+                    //return RedirectToAction("Home", "EmployerHomePage");
                     //return RedirectToAction("Home", "EmployerHomePage");
                 }
                 AddErrors(result);
@@ -413,6 +461,12 @@ namespace PartTimeJob.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
+        public ActionResult GoEmail ()
+        {
+            return View();
+        }
+
         //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]
@@ -440,6 +494,7 @@ namespace PartTimeJob.Controllers
 
             base.Dispose(disposing);
         }
+        
 
         #region Helpers
         // Used for XSRF protection when adding external logins

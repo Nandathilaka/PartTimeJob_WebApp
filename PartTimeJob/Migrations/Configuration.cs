@@ -9,8 +9,7 @@ namespace PartTimeJob.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            ContextKey = "PartTimeJob.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(PartTimeJob.Models.ApplicationDbContext context)

@@ -171,8 +171,8 @@
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
-    <Reference Include="Twilio, Version=5.13.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Twilio.5.13.6\lib\net451\Twilio.dll</HintPath>
+    <Reference Include="Twilio, Version=5.16.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.5.16.0\lib\net451\Twilio.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -201,34 +201,37 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmployeeHomePageController.cs" />
+    <Compile Include="Controllers\EmployerController.cs" />
     <Compile Include="Controllers\EmployerHomePageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\WithOutQualificationJobController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806192235284_InitialCreate.cs" />
-    <Compile Include="Migrations\201806192235284_InitialCreate.Designer.cs">
-      <DependentUpon>201806192235284_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201808181618137_InitialCreate.cs" />
+    <Compile Include="Migrations\201808181618137_InitialCreate.Designer.cs">
+      <DependentUpon>201808181618137_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806210207334_WithOutQualificafionValidate.cs" />
-    <Compile Include="Migrations\201806210207334_WithOutQualificafionValidate.Designer.cs">
-      <DependentUpon>201806210207334_WithOutQualificafionValidate.cs</DependentUpon>
+    <Compile Include="Migrations\201808190814177_UpdateDatabase.cs" />
+    <Compile Include="Migrations\201808190814177_UpdateDatabase.Designer.cs">
+      <DependentUpon>201808190814177_UpdateDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806210534188_UpdateTable.cs" />
-    <Compile Include="Migrations\201806210534188_UpdateTable.Designer.cs">
-      <DependentUpon>201806210534188_UpdateTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807010758549_AddUserType.cs" />
-    <Compile Include="Migrations\201807010758549_AddUserType.Designer.cs">
-      <DependentUpon>201807010758549_AddUserType.cs</DependentUpon>
+    <Compile Include="Migrations\201808190928398_UpdateJobCategory.cs" />
+    <Compile Include="Migrations\201808190928398_UpdateJobCategory.Designer.cs">
+      <DependentUpon>201808190928398_UpdateJobCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Employer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\WithOutQualificationJob.cs" />
+    <Compile Include="Models\WithQualificationJob.cs" />
+    <Compile Include="Models\YourTrip.cs" />
     <Compile Include="MyLoggingFilterAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -290,7 +293,9 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -335,14 +340,22 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\EmployerHomePage\Home.cshtml" />
     <Content Include="Views\EmployerHomePage\CreateJob.cshtml" />
-    <Content Include="Views\WithOutQualificationJob\Create.cshtml" />
-    <Content Include="Views\WithOutQualificationJob\Delete.cshtml" />
-    <Content Include="Views\WithOutQualificationJob\Details.cshtml" />
-    <Content Include="Views\WithOutQualificationJob\Edit.cshtml" />
-    <Content Include="Views\WithOutQualificationJob\Index.cshtml" />
+    <Content Include="Views\EmployeeHomePage\Home.cshtml" />
+    <Content Include="Views\Employer\Create.cshtml" />
+    <Content Include="Views\Employer\Delete.cshtml" />
+    <Content Include="Views\Employer\Details.cshtml" />
+    <Content Include="Views\Employer\Edit.cshtml" />
+    <Content Include="Views\Employer\Index.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Delete.cshtml" />
+    <Content Include="Views\Employee\Details.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Account\GoEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -351,17 +364,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806192235284_InitialCreate.resx">
-      <DependentUpon>201806192235284_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808181618137_InitialCreate.resx">
+      <DependentUpon>201808181618137_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806210207334_WithOutQualificafionValidate.resx">
-      <DependentUpon>201806210207334_WithOutQualificafionValidate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808190814177_UpdateDatabase.resx">
+      <DependentUpon>201808190814177_UpdateDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806210534188_UpdateTable.resx">
-      <DependentUpon>201806210534188_UpdateTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807010758549_AddUserType.resx">
-      <DependentUpon>201807010758549_AddUserType.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808190928398_UpdateJobCategory.resx">
+      <DependentUpon>201808190928398_UpdateJobCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
