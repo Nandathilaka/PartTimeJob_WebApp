@@ -32,6 +32,7 @@ namespace PartTimeJob.Models
         [Required(ErrorMessage = "Please Enter Birthday")]
         [DisplayName("Birthday")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime BirthDay { get; set; }
 
         [Required(ErrorMessage = "Please Enter Phone Number")]
@@ -54,6 +55,8 @@ namespace PartTimeJob.Models
         public virtual ICollection<YourTrip> YourTrip { get; set; }
 
         public virtual ApplicationUser user { get; set; }
+
+        public virtual ICollection<EnrollmentWithOutQualificationJob> EnrollmentWithOutQualificationJob { get; set; }
 
         public string ApplicationUserId { get; set; }
 

@@ -58,7 +58,7 @@ namespace PartTimeJob.Models
 
         [Required(ErrorMessage = "Please Enter Date Format yyyy-MM-dd")]
         [DisplayName("Date")]
-        [DataType(DataType.DateTime, ErrorMessage = "Date non valid.")]
+        [DataType(DataType.Date, ErrorMessage = "Date non valid.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
 
@@ -82,5 +82,6 @@ namespace PartTimeJob.Models
         
         public virtual Employer Employer { get; set; }
         public virtual ICollection<YourTrip> YourTrip { get; set; }
+        public virtual ICollection<EnrollmentWithOutQualificationJob> EnrollmentWithOutQualificationJob { get; set; }
     }
 }

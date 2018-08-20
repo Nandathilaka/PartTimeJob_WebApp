@@ -40,6 +40,8 @@ namespace PartTimeJob.Models
         public DbSet<Employer> Employers { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<YourTrip> YourTrip { get; set; }
-        public IEnumerable ApplicationUsers { get; internal set; }
+        public DbSet<EnrollmentWithOutQualificationJob> EnrollmentWithOutQualificationJob { get; set; }
+        //public IEnumerable ApplicationUsers { get; internal set; }
+
     }
 }

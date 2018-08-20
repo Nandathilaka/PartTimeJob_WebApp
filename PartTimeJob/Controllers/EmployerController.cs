@@ -54,6 +54,8 @@ namespace PartTimeJob.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,CompanyName,FirstName,LastName,Position,Location,Country,ApplicationUserId")] Employer employer)
         {
+            var userId = User.Identity.GetUserId();
+            var currentLoginId = db.Users.Where(c => c.Id == userId);
             if (ModelState.IsValid)
             {
                 db.Employers.Add(employer);
@@ -62,13 +64,15 @@ namespace PartTimeJob.Controllers
                 return RedirectToAction("GoEmail", "Account");
             }
 
-            ViewBag.ApplicationUserId = new SelectList(db.ApplicationUsers, "Id", "Email", employer.ApplicationUserId);
+            ViewBag.ApplicationUserId = new SelectList(currentLoginId, "Id", "Email", employer.ApplicationUserId);
             return View(employer);
         }
 
         // GET: Employer/Edit/5
         public ActionResult Edit(int? id)
         {
+            var userId = User.Identity.GetUserId();
+            var currentLoginId = db.Users.Where(c => c.Id == userId);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -78,7 +82,7 @@ namespace PartTimeJob.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ApplicationUserId = new SelectList(db.ApplicationUsers, "Id", "Email", employer.ApplicationUserId);
+            ViewBag.ApplicationUserId = new SelectList(currentLoginId, "Id", "Email", employer.ApplicationUserId);
             return View(employer);
         }
 
@@ -89,13 +93,15 @@ namespace PartTimeJob.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,CompanyName,FirstName,LastName,Position,Location,Country,ApplicationUserId")] Employer employer)
         {
+            var userId = User.Identity.GetUserId();
+            var currentLoginId = db.Users.Where(c => c.Id == userId);
             if (ModelState.IsValid)
             {
                 db.Entry(employer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ApplicationUserId = new SelectList(db.ApplicationUsers, "Id", "Email", employer.ApplicationUserId);
+            ViewBag.ApplicationUserId = new SelectList(currentLoginId, "Id", "Email", employer.ApplicationUserId);
             return View(employer);
         }
 

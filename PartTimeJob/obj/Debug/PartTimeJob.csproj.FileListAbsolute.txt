@@ -185,3 +185,6 @@ D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTim
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.csproj.GenerateResource.Cache
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.Migrations.UpdateDatabase.resources
 D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.Migrations.UpdateJobCategory.resources
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.Migrations.AddEnrollmentTable.resources
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.Migrations.ForeignKeyEmployeeBetweenWithoutQual.resources
+D:\UCSC\3rd Year\3rdYearGroupProject\NewUpdateProject\PartTimeJob - Copy\PartTimeJob\obj\Debug\PartTimeJob.Migrations.UpdateForeignKeyEmployeeBetweenWithoutQual.resources

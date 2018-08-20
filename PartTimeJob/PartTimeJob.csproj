@@ -205,8 +205,11 @@
     <Compile Include="Controllers\EmployeeHomePageController.cs" />
     <Compile Include="Controllers\EmployerController.cs" />
     <Compile Include="Controllers\EmployerHomePageController.cs" />
+    <Compile Include="Controllers\EnrollmentWithOutQualificationJobController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\WithOutQualificationJobController.cs" />
+    <Compile Include="Controllers\WithOutQualificationJobEmployeeViewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -222,10 +225,23 @@
     <Compile Include="Migrations\201808190928398_UpdateJobCategory.Designer.cs">
       <DependentUpon>201808190928398_UpdateJobCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808191918160_AddEnrollmentTable.cs" />
+    <Compile Include="Migrations\201808191918160_AddEnrollmentTable.Designer.cs">
+      <DependentUpon>201808191918160_AddEnrollmentTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808200644390_ForeignKeyEmployeeBetweenWithoutQual.cs" />
+    <Compile Include="Migrations\201808200644390_ForeignKeyEmployeeBetweenWithoutQual.Designer.cs">
+      <DependentUpon>201808200644390_ForeignKeyEmployeeBetweenWithoutQual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808200754488_UpdateForeignKeyEmployeeBetweenWithoutQual.cs" />
+    <Compile Include="Migrations\201808200754488_UpdateForeignKeyEmployeeBetweenWithoutQual.Designer.cs">
+      <DependentUpon>201808200754488_UpdateForeignKeyEmployeeBetweenWithoutQual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Employer.cs" />
+    <Compile Include="Models\EnrollmentWithOutQualificationJob.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Payment.cs" />
@@ -352,6 +368,21 @@
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Account\GoEmail.cshtml" />
+    <Content Include="Views\WithOutQualificationJob\Create.cshtml" />
+    <Content Include="Views\WithOutQualificationJob\Delete.cshtml" />
+    <Content Include="Views\WithOutQualificationJob\Details.cshtml" />
+    <Content Include="Views\WithOutQualificationJob\Edit.cshtml" />
+    <Content Include="Views\WithOutQualificationJob\Index.cshtml" />
+    <Content Include="Views\WithOutQualificationJobEmployeeView\Create.cshtml" />
+    <Content Include="Views\WithOutQualificationJobEmployeeView\Delete.cshtml" />
+    <Content Include="Views\WithOutQualificationJobEmployeeView\Details.cshtml" />
+    <Content Include="Views\WithOutQualificationJobEmployeeView\Edit.cshtml" />
+    <Content Include="Views\WithOutQualificationJobEmployeeView\Index.cshtml" />
+    <Content Include="Views\EnrollmentWithOutQualificationJob\Create.cshtml" />
+    <Content Include="Views\EnrollmentWithOutQualificationJob\Delete.cshtml" />
+    <Content Include="Views\EnrollmentWithOutQualificationJob\Details.cshtml" />
+    <Content Include="Views\EnrollmentWithOutQualificationJob\Edit.cshtml" />
+    <Content Include="Views\EnrollmentWithOutQualificationJob\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -372,6 +403,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808190928398_UpdateJobCategory.resx">
       <DependentUpon>201808190928398_UpdateJobCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808191918160_AddEnrollmentTable.resx">
+      <DependentUpon>201808191918160_AddEnrollmentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808200644390_ForeignKeyEmployeeBetweenWithoutQual.resx">
+      <DependentUpon>201808200644390_ForeignKeyEmployeeBetweenWithoutQual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808200754488_UpdateForeignKeyEmployeeBetweenWithoutQual.resx">
+      <DependentUpon>201808200754488_UpdateForeignKeyEmployeeBetweenWithoutQual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

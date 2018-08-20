@@ -42,8 +42,8 @@ namespace PartTimeJob.Controllers
         public ActionResult Create()
         {
             var userId = User.Identity.GetUserId();
-            var currentLoginId = db.Users.Where(c => c.Id == userId);
-            ViewBag.ApplicationUserId = new SelectList(currentLoginId, "Id", "Email");
+            var currentLogin = db.Users.Where(c => c.Id == userId);
+            ViewBag.ApplicationUserId = new SelectList(currentLogin, "Id", "Email");
             return View();
         }
 
@@ -54,6 +54,8 @@ namespace PartTimeJob.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,FirstName,LastName,BirthDay,PhoneNumber,Gender,Qualification,ApplicationUserId")] Employee employee)
         {
+            var userId = User.Identity.GetUserId();
+            var currentLogin = db.Users.Where(c => c.Id == userId);
             if (ModelState.IsValid)
             {
                 db.Employees.Add(employee);
@@ -63,13 +65,15 @@ namespace PartTimeJob.Controllers
                
             }
 
-            ViewBag.ApplicationUserId = new SelectList(db.ApplicationUsers, "Id", "Email", employee.ApplicationUserId);
+            ViewBag.ApplicationUserId = new SelectList(currentLogin, "Id", "Email", employee.ApplicationUserId);
             return View(employee);
         }
 
         // GET: Employee/Edit/5
         public ActionResult Edit(int? id)
         {
+            var userId = User.Identity.GetUserId();
+            var currentLogin = db.Users.Where(c => c.Id == userId);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -79,7 +83,7 @@ namespace PartTimeJob.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ApplicationUserId = new SelectList(db.ApplicationUsers, "Id", "Email", employee.ApplicationUserId);
+            ViewBag.ApplicationUserId = new SelectList(currentLogin, "Id", "Email", employee.ApplicationUserId);
             return View(employee);
         }
 
@@ -90,13 +94,15 @@ namespace PartTimeJob.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,BirthDay,PhoneNumber,Gender,Qualification,ApplicationUserId")] Employee employee)
         {
+            var userId = User.Identity.GetUserId();
+            var currentLogin = db.Users.Where(c => c.Id == userId);
             if (ModelState.IsValid)
             {
                 db.Entry(employee).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ApplicationUserId = new SelectList(db.ApplicationUsers, "Id", "Email", employee.ApplicationUserId);
+            ViewBag.ApplicationUserId = new SelectList(currentLogin, "Id", "Email", employee.ApplicationUserId);
             return View(employee);
         }
 
