@@ -201,11 +201,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminHomePageController.cs" />
     <Compile Include="Controllers\ApprovalWithOutQualificationJobController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmployeeHomePageController.cs" />
+    <Compile Include="Controllers\EmployeeViewByEmployerController.cs" />
     <Compile Include="Controllers\EmployerController.cs" />
     <Compile Include="Controllers\EmployerHomePageController.cs" />
+    <Compile Include="Controllers\EmployerViewByEmployeeController.cs" />
     <Compile Include="Controllers\EnrollmentWithOutQualificationJobController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -264,6 +267,8 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Home.png" />
+    <Content Include="Content\Images\Part.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -393,10 +398,20 @@
     <Content Include="Views\ApprovalWithOutQualificationJob\Details.cshtml" />
     <Content Include="Views\ApprovalWithOutQualificationJob\Edit.cshtml" />
     <Content Include="Views\ApprovalWithOutQualificationJob\Index.cshtml" />
+    <Content Include="Views\EmployerViewByEmployee\Create.cshtml" />
+    <Content Include="Views\EmployerViewByEmployee\Delete.cshtml" />
+    <Content Include="Views\EmployerViewByEmployee\Details.cshtml" />
+    <Content Include="Views\EmployerViewByEmployee\Edit.cshtml" />
+    <Content Include="Views\EmployerViewByEmployee\Index.cshtml" />
+    <Content Include="Views\EmployeeViewByEmployer\Create.cshtml" />
+    <Content Include="Views\EmployeeViewByEmployer\Delete.cshtml" />
+    <Content Include="Views\EmployeeViewByEmployer\Details.cshtml" />
+    <Content Include="Views\EmployeeViewByEmployer\Edit.cshtml" />
+    <Content Include="Views\EmployeeViewByEmployer\Index.cshtml" />
+    <Content Include="Views\AdminHomePage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

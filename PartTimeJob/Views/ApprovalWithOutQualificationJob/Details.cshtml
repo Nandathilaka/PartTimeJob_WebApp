@@ -99,7 +99,9 @@
             <table class="table">
                 <tr>
                     <th>Employee Names</th>
+                    <th>Contact Number</th>
                     <th>Enrollment Date</th>
+                    <th>Go fo More Info About Employee </th>
                 </tr>
                 @foreach (var item in Model.EnrollmentWithOutQualificationJob)
                 {
@@ -108,7 +110,14 @@
                             @Html.DisplayFor(modelItem => item.Employee.FirstName)
                         </td>
                         <td>
+                            @Html.DisplayFor(modelItem => item.Employee.PhoneNumber)
+                        </td>
+                        <td>
                             @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            <p>@Html.ActionLink("View " + item.Employee.FirstName + " Profile Information", "Details", "EmployeeViewByEmployer", new { id = item.EmployeeId }, new { @class = "nav-link" })</p>
+
                         </td>
                     </tr>
                 }

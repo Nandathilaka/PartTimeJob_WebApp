@@ -12,10 +12,14 @@
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Employer.CompanyName)
+
+            @*<p>@Html.ActionLink("View " + Model.Employer.CompanyName + "Profile", "Details", "EmployerViewByEmployee", new { id = Model.Employer.Id }, new { @class = "nav-link" })</p>*@
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Employer.CompanyName)
+            <p>@Html.ActionLink("View " + Model.Employer.CompanyName + " Profile Information", "Details", "EmployerViewByEmployee", new { id = Model.Employer.Id }, new { @class = "nav-link" })</p>
+
         </dd>
 
         <dt>
