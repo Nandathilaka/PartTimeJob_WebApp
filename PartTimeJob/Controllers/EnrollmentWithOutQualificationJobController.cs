@@ -18,7 +18,8 @@ namespace PartTimeJob.Controllers
         // GET: EnrollmentWithOutQualificationJob
         public ActionResult Index()
         {
-            var enrollmentWithOutQualificationJob = db.EnrollmentWithOutQualificationJob.Include(e => e.Employee).Include(e => e.WithOutQualificationJob);
+            var userId = User.Identity.GetUserId();
+            var enrollmentWithOutQualificationJob = db.EnrollmentWithOutQualificationJob.Include(e => e.Employee).Include(e => e.WithOutQualificationJob).Where(e => e.Employee.ApplicationUserId==userId);
             return View(enrollmentWithOutQualificationJob.ToList());
         }
 
@@ -84,8 +85,12 @@ namespace PartTimeJob.Controllers
             {
                 return HttpNotFound();
             }
+            
+            var currentJobId = db.WithOutQualificationJobs.Where(c => c.Id == id);
             ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FirstName", enrollmentWithOutQualificationJob.EmployeeId);
             ViewBag.WithOutQualificationJobId = new SelectList(db.WithOutQualificationJobs, "Id", "JobName", enrollmentWithOutQualificationJob.WithOutQualificationJobId);
+            //ViewBag.WithOutQualificationJobId = new SelectList(currentJobId, "Id", "JobName", enrollmentWithOutQualificationJob.WithOutQualificationJobId);
+
             return View(enrollmentWithOutQualificationJob);
         }
 

@@ -1,10 +1,10 @@
 ﻿@model PartTimeJob.Models.Employee
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Details";
 }
 
-<h2>Edit</h2>
+<h2>Edit Your Profile Informations</h2>
 
 
 @using (Html.BeginForm())
@@ -82,7 +82,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Home", "Home","EmployeeHomPage")
 </div>
 
 @section Scripts {

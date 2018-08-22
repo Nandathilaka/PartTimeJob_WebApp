@@ -52,8 +52,11 @@ namespace PartTimeJob.Models
         public int NumOfEmployee { get; set; }
 
         [Required(ErrorMessage = "Please Enter Payment for This Job")]
-        [DataType(DataType.Currency)]
+        [DataType(DataType.Text)]
         [DisplayName("Payment (LRK)")]
+        //[MaxLength(12)]
+        //[MinLength(1)]
+        //[RegularExpression("[^0-9]", ErrorMessage = "Payment must be numeric")]
         public decimal Payment { get; set; }
 
         [Required(ErrorMessage = "Please Enter Date Format yyyy-MM-dd")]
@@ -83,5 +86,6 @@ namespace PartTimeJob.Models
         public virtual Employer Employer { get; set; }
         public virtual ICollection<YourTrip> YourTrip { get; set; }
         public virtual ICollection<EnrollmentWithOutQualificationJob> EnrollmentWithOutQualificationJob { get; set; }
+        
     }
 }

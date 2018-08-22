@@ -19,7 +19,8 @@ namespace PartTimeJob.Controllers
         
         public ActionResult Index()
         {
-            var employees = db.Employees.Include(e => e.user);
+            var userId = User.Identity.GetUserId();
+            var employees = db.Employees.Include(e => e.user).Where(e => e.ApplicationUserId==userId);
             return View(employees.ToList());
         }
 

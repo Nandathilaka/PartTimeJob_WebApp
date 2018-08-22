@@ -1,13 +1,13 @@
 ﻿@model PartTimeJob.Models.EnrollmentWithOutQualificationJob
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Details of Enrollment Job";
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>EnrollmentWithOutQualificationJob</h4>
+    <h4>Enrollment WithOut Qualification Job</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -27,7 +27,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Date)
+            Enrollment Date
+            @*@Html.DisplayNameFor(model => model.Date)*@
         </dt>
 
         <dd>
@@ -37,6 +38,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @*@Html.ActionLink("Edit Enrollment Date", "Edit", new { id = Model.Id }) |*@
+    @Html.ActionLink("Back to My Enrollment List", "Index")
 </p>

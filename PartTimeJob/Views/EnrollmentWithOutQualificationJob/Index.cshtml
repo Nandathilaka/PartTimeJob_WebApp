@@ -1,13 +1,14 @@
 ﻿@model IEnumerable<PartTimeJob.Models.EnrollmentWithOutQualificationJob>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "My Enrollment Job List";
 }
 
-<h2>Index</h2>
+<h2>List of Enrollments</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p>@*
+    @Html.ActionLink("Apply New", "Create")
+*@
 </p>
 <table class="table">
     <tr>
@@ -18,7 +19,9 @@
             @Html.DisplayNameFor(model => model.WithOutQualificationJob.JobName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Date)
+            Enrollment Date
+            @*
+    @Html.DisplayNameFor(model => model.Date)*@
         </th>
         <th></th>
     </tr>
@@ -35,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.Date)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
@@ -43,3 +46,7 @@
 }
 
 </table>
+
+<div>
+    @Html.ActionLink("Back to Your Home Page", "Home","EmployeeHomaPage", new { area = "" })
+</div>

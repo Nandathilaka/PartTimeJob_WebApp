@@ -11,25 +11,19 @@ using Microsoft.AspNet.Identity;
 
 namespace PartTimeJob.Controllers
 {
-    public class WithOutQualificationJobController : Controller
+    public class ApprovalWithOutQualificationJobController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: WithOutQualificationJob
+        // GET: ApprovalWithOutQualificationJob
         public ActionResult Index()
         {
-            //var userId = User.Identity.GetUserId();
-            //var currentLoginId = db.Employers.Where(c => c.ApplicationUserId == userId);
-
-
             var userId = User.Identity.GetUserId();
-            //var withOutQualificationJobs = db.WithOutQualificationJobs.Include(w => w.Employer.ApplicationUserId==userId);
             var withOutQualificationJobs = db.WithOutQualificationJobs.Include(w => w.Employer).Where(w => w.Employer.ApplicationUserId==userId);
             return View(withOutQualificationJobs.ToList());
-            //return View(withOutQualificationJobs);
         }
 
-        // GET: WithOutQualificationJob/Details/5
+        // GET: ApprovalWithOutQualificationJob/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -44,17 +38,14 @@ namespace PartTimeJob.Controllers
             return View(withOutQualificationJob);
         }
 
-        // GET: WithOutQualificationJob/Create
+        // GET: ApprovalWithOutQualificationJob/Create
         public ActionResult Create()
         {
-            var userId = User.Identity.GetUserId();
-            var currentLogin = db.Employers.Where(c => c.ApplicationUserId == userId);
-            ViewBag.EmployerId = new SelectList(currentLogin, "Id", "CompanyName");
-            //ViewBag.EmployerId = new SelectList(db.Employers, "Id", "CompanyName");
+            ViewBag.EmployerId = new SelectList(db.Employers, "Id", "CompanyName");
             return View();
         }
 
-        // POST: WithOutQualificationJob/Create
+        // POST: ApprovalWithOutQualificationJob/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -72,7 +63,7 @@ namespace PartTimeJob.Controllers
             return View(withOutQualificationJob);
         }
 
-        // GET: WithOutQualificationJob/Edit/5
+        // GET: ApprovalWithOutQualificationJob/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -88,7 +79,7 @@ namespace PartTimeJob.Controllers
             return View(withOutQualificationJob);
         }
 
-        // POST: WithOutQualificationJob/Edit/5
+        // POST: ApprovalWithOutQualificationJob/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -105,7 +96,7 @@ namespace PartTimeJob.Controllers
             return View(withOutQualificationJob);
         }
 
-        // GET: WithOutQualificationJob/Delete/5
+        // GET: ApprovalWithOutQualificationJob/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -120,7 +111,7 @@ namespace PartTimeJob.Controllers
             return View(withOutQualificationJob);
         }
 
-        // POST: WithOutQualificationJob/Delete/5
+        // POST: ApprovalWithOutQualificationJob/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

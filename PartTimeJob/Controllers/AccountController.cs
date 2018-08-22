@@ -194,6 +194,7 @@ namespace PartTimeJob.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, "Employee"));
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
@@ -206,9 +207,13 @@ namespace PartTimeJob.Controllers
 
                     if (value==1)
                     {
+                        UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, "Employer"));
+
                         return RedirectToAction("Create", "Employer");
                     }
                     else {
+                        UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, "Employee"));
+
                         return RedirectToAction("Create", "Employee");
                     }
                     

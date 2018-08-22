@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Home";
+    ViewBag.Title = "Home Page";
 }
 
 <h2>Your are in Employer Dashboard</h2>
@@ -11,11 +11,11 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6 margin-top-20"><a href="" class="btn btn-primary btn-block btn-large">Approvel Job</a></div>
-    <div class="col-md-6 margin-top-20"><a href="" class="btn btn-primary btn-block btn-large">My Rating</a></div>
+    <div class="col-md-6 margin-top-20"><a href="@Url.Action("Index","ApprovalWithOutQualificationJob")" class="btn btn-primary btn-block btn-large">Employee Approvel in My Posted Job</a></div>
+    <div class="col-md-6 margin-top-20"><a href="@Url.Action("Index","Rating")" class="btn btn-primary btn-block btn-large">My Rating</a></div>
 </div>
 
 <div class="row">
-    <div class="col-md-6 margin-top-20"><a href="" class="btn btn-primary btn-block btn-large">CV</a></div>
-    <div class="col-md-6 margin-top-20"><a href="" class="btn btn-primary btn-block btn-large">My Profile</a></div>
+    <div class="col-md-6 margin-top-20"><a href="@Url.Action("Index","EnrollmentWithQualificationJob")" class="btn btn-primary btn-block btn-large">CV For Posted Job</a></div>
+    <div class="col-md-6 margin-top-20"><a href="@Url.Action("Index","Employer")" class="btn btn-primary btn-block btn-large">My Profile</a></div>
 </div>

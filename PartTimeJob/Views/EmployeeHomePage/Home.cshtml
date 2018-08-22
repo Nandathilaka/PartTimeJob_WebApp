@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Home";
+    ViewBag.Title = "Home Page";
 }
 
 <h2>Your are in Employee Dashboard</h2>
@@ -11,11 +11,11 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6 margin-top-20"><a href="" class="btn btn-primary btn-block btn-large">My Enrollment Jobs</a></div>
+    <div class="col-md-6 margin-top-20"><a href="@Url.Action("Index", "EnrollmentWithOutQualificationJob")" class="btn btn-primary btn-block btn-large">My Enrollment Jobs</a></div>
     <div class="col-md-6 margin-top-20"><a href="" class="btn btn-primary btn-block btn-large">Payment</a></div>
 </div>
 
 <div class="row">
     <div class="col-md-6 margin-top-20"><a href="" class="btn btn-primary btn-block btn-large">CV</a></div>
-    <div class="col-md-6 margin-top-20"><a href="" class="btn btn-primary btn-block btn-large">My Profile</a></div>
+    <div class="col-md-6 margin-top-20"><a href="@Url.Action("Index", "Employee")" class="btn btn-primary btn-block btn-large">My Profile</a></div>
 </div>

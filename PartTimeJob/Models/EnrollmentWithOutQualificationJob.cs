@@ -13,13 +13,15 @@ namespace PartTimeJob.Models
         public int Id { get; set; }
 
         [ForeignKey("Employee")]
+        [DisplayName("Your Name")]
         public int EmployeeId { get; set; }
 
         [ForeignKey("WithOutQualificationJob")]
+        [DisplayName("Job Name")]
         public int WithOutQualificationJobId { get; set; }
 
         [Required(ErrorMessage = "Please Enter Enrollment Date")]
-        [DisplayName("Enrollment Date")]
+        [DisplayName("Add Enrollment Date(Today)")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }

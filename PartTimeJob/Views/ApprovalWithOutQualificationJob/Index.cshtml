@@ -1,13 +1,14 @@
 ﻿@model IEnumerable<PartTimeJob.Models.WithOutQualificationJob>
 
 @{
-    ViewBag.Title = "My Posted Job List";
+    ViewBag.Title = "Approval Job List and Employee Details";
 }
 
-<h2>List</h2>
+<h2>Chech the Approval Details</h2>
 
-<p>
-    @Html.ActionLink("Create New Job", "Create")
+<p>@*
+    @Html.ActionLink("Create New", "Create")
+*@
 </p>
 <table class="table">
     <tr>
@@ -77,11 +78,15 @@
             @Html.DisplayFor(modelItem => item.Status)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
+            @Html.ActionLink("Check Approval List", "Details", new { id=item.Id })
+           @* @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
         </td>
     </tr>
 }
 
 </table>
+
+<div>
+    @Html.ActionLink("Back to Homa Page", "Home","EmployerHomaPage",new { area = "" })
+</div>

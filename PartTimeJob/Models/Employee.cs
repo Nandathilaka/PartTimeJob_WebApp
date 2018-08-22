@@ -19,13 +19,13 @@ namespace PartTimeJob.Models
 
         [Required(ErrorMessage = "Please Enter First Name")]
         [DisplayName("First Name")]
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$",ErrorMessage ="Please Enter First Character Capital and others are simple Character ")]
         [StringLength(30, ErrorMessage = "First Name cannot be longer than 30 characters.")]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Please Enter Last Name")]
         [DisplayName("Last Name")]
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$", ErrorMessage = "Please Enter First Character Capital and others are simple Character ")]
         [StringLength(30, ErrorMessage = "Last Name cannot be longer than 30 characters.")]
         public string LastName { get; set; }
 
@@ -40,11 +40,11 @@ namespace PartTimeJob.Models
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
 
-        [Required(ErrorMessage ="Please Enter Gender")]
+        [Required(ErrorMessage ="Please Select Gender")]
         [DisplayFormat(NullDisplayText = "No Gender")]
         public Gender? Gender { get; set; }
 
-        [DisplayName("Your Qualifications")]
+        [DisplayName("Add Your Qualifications")]
         [DataType(DataType.MultilineText)]
         public string Qualification { get; set; }
 
@@ -58,6 +58,7 @@ namespace PartTimeJob.Models
 
         public virtual ICollection<EnrollmentWithOutQualificationJob> EnrollmentWithOutQualificationJob { get; set; }
 
+        [DisplayName("Your Account ID")]
         public string ApplicationUserId { get; set; }
 
 

@@ -1,7 +1,7 @@
 ﻿@model PartTimeJob.Models.EnrollmentWithOutQualificationJob
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Enrollment Date";
 }
 
 <h2>Edit</h2>
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>EnrollmentWithOutQualificationJob</h4>
+        <h4>Enrollment For WithOut Qualification Job</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
@@ -50,7 +50,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to My Enrollment List", "Index")
 </div>
 
 @section Scripts {
