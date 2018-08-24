@@ -103,17 +103,29 @@ namespace PartTimeJob.Controllers
                     var user = db.Users
                     .Where(b => b.UserName == model.Email)
                     .FirstOrDefault();
-                    var value = (int)user.UserType;
 
-                    if (value==0)
+                    if (user.UserType == null)
                     {
-                        return RedirectToAction("Home", "EmployeeHomePage");
+                        return RedirectToAction("Index", "AdminHomePage");
+
                     }
-                    else
-                    {
-                        return RedirectToAction("Home", "EmployerHomePage");
+                    else {
+                        var value = (int)user.UserType;
+
+                        if (value == 0)
+                        {
+                            return RedirectToAction("Home", "EmployeeHomePage");
+                        }
+                        else if (value == 1)
+                        {
+                            return RedirectToAction("Home", "EmployerHomePage");
+                        }
+                        else
+                        {
+                            return null;
+                        }
+
                     }
-                    
                     
                     //return RedirectToLocal(returnUrl);
                     //return RedirectToAction("Home", "EmployerHomePage");
@@ -205,17 +217,19 @@ namespace PartTimeJob.Controllers
 
                     var value = (int)model.UserType;
 
-                    if (value==1)
+                    if (value == 1)
                     {
                         UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, "Employer"));
 
                         return RedirectToAction("Create", "Employer");
                     }
-                    else {
+                    else
+                    {
                         UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, "Employee"));
 
                         return RedirectToAction("Create", "Employee");
                     }
+                   
                     
                     
                     //return RedirectToAction("Home", "EmployerHomePage");

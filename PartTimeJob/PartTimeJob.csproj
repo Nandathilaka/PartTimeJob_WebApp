@@ -109,6 +109,14 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SendGrid, Version=9.8.0.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
       <HintPath>..\packages\Sendgrid.9.9.0\lib\net452\SendGrid.dll</HintPath>
       <Private>True</Private>
@@ -201,7 +209,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminEmployeeController.cs" />
+    <Compile Include="Controllers\AdminEmployeeViewByAdminController.cs" />
+    <Compile Include="Controllers\AdminEmployerController.cs" />
+    <Compile Include="Controllers\AdminEmployerViewByAdminController.cs" />
+    <Compile Include="Controllers\AdminEnrollmentWithOutQualificationJobController.cs" />
     <Compile Include="Controllers\AdminHomePageController.cs" />
+    <Compile Include="Controllers\AdminWithOutQualificationJobController.cs" />
     <Compile Include="Controllers\ApprovalWithOutQualificationJobController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmployeeHomePageController.cs" />
@@ -269,6 +283,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\Home.png" />
     <Content Include="Content\Images\Part.png" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -409,6 +424,36 @@
     <Content Include="Views\EmployeeViewByEmployer\Edit.cshtml" />
     <Content Include="Views\EmployeeViewByEmployer\Index.cshtml" />
     <Content Include="Views\AdminHomePage\Index.cshtml" />
+    <Content Include="Views\AdminWithOutQualificationJob\Create.cshtml" />
+    <Content Include="Views\AdminWithOutQualificationJob\Delete.cshtml" />
+    <Content Include="Views\AdminWithOutQualificationJob\Details.cshtml" />
+    <Content Include="Views\AdminWithOutQualificationJob\Edit.cshtml" />
+    <Content Include="Views\AdminWithOutQualificationJob\Index.cshtml" />
+    <Content Include="Views\AdminEmployer\Create.cshtml" />
+    <Content Include="Views\AdminEmployer\Delete.cshtml" />
+    <Content Include="Views\AdminEmployer\Details.cshtml" />
+    <Content Include="Views\AdminEmployer\Edit.cshtml" />
+    <Content Include="Views\AdminEmployer\Index.cshtml" />
+    <Content Include="Views\AdminEmployee\Create.cshtml" />
+    <Content Include="Views\AdminEmployee\Delete.cshtml" />
+    <Content Include="Views\AdminEmployee\Details.cshtml" />
+    <Content Include="Views\AdminEmployee\Edit.cshtml" />
+    <Content Include="Views\AdminEmployee\Index.cshtml" />
+    <Content Include="Views\AdminEnrollmentWithOutQualificationJob\Create.cshtml" />
+    <Content Include="Views\AdminEnrollmentWithOutQualificationJob\Delete.cshtml" />
+    <Content Include="Views\AdminEnrollmentWithOutQualificationJob\Details.cshtml" />
+    <Content Include="Views\AdminEnrollmentWithOutQualificationJob\Edit.cshtml" />
+    <Content Include="Views\AdminEnrollmentWithOutQualificationJob\Index.cshtml" />
+    <Content Include="Views\AdminEmployeeViewByAdmin\Create.cshtml" />
+    <Content Include="Views\AdminEmployeeViewByAdmin\Delete.cshtml" />
+    <Content Include="Views\AdminEmployeeViewByAdmin\Details.cshtml" />
+    <Content Include="Views\AdminEmployeeViewByAdmin\Edit.cshtml" />
+    <Content Include="Views\AdminEmployeeViewByAdmin\Index.cshtml" />
+    <Content Include="Views\AdminEmployerViewByAdmin\Create.cshtml" />
+    <Content Include="Views\AdminEmployerViewByAdmin\Delete.cshtml" />
+    <Content Include="Views\AdminEmployerViewByAdmin\Details.cshtml" />
+    <Content Include="Views\AdminEmployerViewByAdmin\Edit.cshtml" />
+    <Content Include="Views\AdminEmployerViewByAdmin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

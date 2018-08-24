@@ -21,7 +21,7 @@ namespace PartTimeJob.Models
         public int WithOutQualificationJobId { get; set; }
 
         [Required(ErrorMessage = "Please Enter Enrollment Date")]
-        [DisplayName("Add Enrollment Date(Today)")]
+        [DisplayName("Enrollment Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }

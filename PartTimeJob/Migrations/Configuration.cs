@@ -1,9 +1,13 @@
 namespace PartTimeJob.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using System.Security.Claims;
 
     internal sealed class Configuration : DbMigrationsConfiguration<PartTimeJob.Models.ApplicationDbContext>
     {
@@ -14,6 +18,22 @@ namespace PartTimeJob.Migrations
 
         protected override void Seed(PartTimeJob.Models.ApplicationDbContext context)
         {
+
+            var userStrore = new UserStore<ApplicationUser>(context);
+            var userManager = new UserManager<ApplicationUser>(userStrore);
+            
+
+            if (!context.Users.Any(t=>t.UserName == "admin@gmail.com"))
+            {
+                var user = new ApplicationUser { UserName = "admin@gmail.com", Email = "admin@gmail.com" };
+                userManager.Create(user, "passW0rd!");
+                context.Roles.AddOrUpdate(r => r.Name, new IdentityRole { Name = "Admin" });
+                context.SaveChanges();
+
+                userManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, "Admin"));
+                userManager.AddToRole(user.Id, "Admin");
+            }
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

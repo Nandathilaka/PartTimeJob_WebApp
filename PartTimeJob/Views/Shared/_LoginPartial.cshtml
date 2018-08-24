@@ -16,13 +16,21 @@
                             {
                                 <li class="nav-item">@Html.ActionLink("Home", "Home", "EmployerHomePage", new { area = "" }, new { @class = "nav-link" })</li>
                             }
-                            else
+                            else if (name.Equals("Employee"))
                             {
                                 <li class="nav-item">@Html.ActionLink("Home", "Home", "EmployeeHomePage", new { area = "" }, new { @class = "nav-link" })</li>
                             }
-        
+                            else if (name.Equals("Admin"))
+                            {
+                                <li class="nav-item">@Html.ActionLink("Home", "Index", "AdminHomePage", new { area = "" }, new { @class = "nav-link" })</li>
 
-        
+                            }
+                            else {
+
+                            }
+
+
+
         <li class="nav-item">@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!  ", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" , @class = "nav-link" })</li>
         <li class="nav-item nav-link"><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>

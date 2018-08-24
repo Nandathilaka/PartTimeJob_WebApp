@@ -5,6 +5,15 @@
 }
 
 <h2>Find The Job</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by Job Name Or Job Location: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>

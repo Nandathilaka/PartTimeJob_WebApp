@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PartTimeJob.Models;
+using PagedList;
 
 namespace PartTimeJob.Controllers
 {
@@ -15,9 +16,18 @@ namespace PartTimeJob.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: WithOutQualificationJobEmployeeView
-        public ActionResult Index()
+        public ViewResult Index( string searchString)
         {
+           
             var withOutQualificationJobs = db.WithOutQualificationJobs.Include(w => w.Employer);
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                withOutQualificationJobs = db.WithOutQualificationJobs.Where(s => s.JobName.Contains(searchString)
+                                       || s.Location.Contains(searchString));
+            }
+
+
             return View(withOutQualificationJobs.ToList());
         }
 

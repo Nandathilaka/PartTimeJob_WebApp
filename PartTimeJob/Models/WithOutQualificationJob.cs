@@ -10,14 +10,27 @@ namespace PartTimeJob.Models
 {
     public enum JobCategory
     {
-        [Display(Name = "IT")]
-        IT,
+        [Display(Name = "Educational")]
+        Educational,
         [Display(Name = "Computing and Softwate")]
         Computing,
         [Display(Name = "Hotel Industry")]
         Hotel,
-        [Display(Name = "Genaral")]
-        Genaral
+        [Display(Name = "Banking & Insurance")]
+        Banking,
+        [Display(Name = "Bussiness and Accounting")]
+        Bussines,
+        [Display(Name = "Cooking & Recipes")]
+        Cooking,
+        [Display(Name = "Event Management")]
+        Managment,
+        [Display(Name = "Security & Body Guards")]
+        Security,
+        [Display(Name = "Translator")]
+        Translator,
+        [Display(Name = "Other")]
+        Other
+
 
     }
     public enum Status {
@@ -60,7 +73,7 @@ namespace PartTimeJob.Models
         public decimal Payment { get; set; }
 
         [Required(ErrorMessage = "Please Enter Date Format yyyy-MM-dd")]
-        [DisplayName("Date")]
+        [DisplayName("Deadline")]
         [DataType(DataType.Date, ErrorMessage = "Date non valid.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
